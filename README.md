@@ -5,7 +5,7 @@
   
  在頁首的部分,我參考https://chiayi-lin.github.io/#about-section 加入了bootstrap的nav-bar
  ,選單中有home,about,contact等選項,透過#選擇ID的方法,可以直接跳到該欄位
- 我先將其顏色改成透明,再用自己寫的css把其position改成fixed,如此一來就能讓它固定在畫面上方了
+ 我先將其顏色改成透明,再用自己寫的css(mycss.css)把其position改成fixed,如此一來就能讓它固定在畫面上方了
  
  在左下角的三個logo中,我放入了我的twitter,github的個人網頁
  

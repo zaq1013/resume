@@ -11,8 +11,9 @@
  
 而在Home的部分，我加入了一個bootstrap的carousel功能，來展示我的3張照片，並用data-interval將幻燈片間隔調至2.5秒
  
-在課程內容展示(Courses)的部分，我同樣加入了一個bootstrap的carousel功能，並在每張圖加入carousel-caption備註
-  並把圖片用<a>加上可以點擊的link，點擊圖片後就能夠看到我放在雲端的那些課程作業成果
+在課程內容展示(Courses)的部分，我同樣加入了一個bootstrap的carousel功能，並在每張圖加入carousel-caption作為備註
+  並把圖片用<a>框住並加上link，點擊圖片後就能夠看到我放在雲端的那些課程作業成果
 
-
+此外，我透過在head加入<link rel="Shortcut Icon" type="image/x-icon" href="./images/logo.ico"/>
+來讓網站使用我自己所繪製的小logo
 

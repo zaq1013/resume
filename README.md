@@ -1,3 +1,12 @@
+### Reference 
+  Template : HTML5UP 
+    https://html5up.net/strata
+    
+ 在頁首的部分,我加入了一個bootstrap的carousel功能,來展示我的三張照片
+ 
+
+
+
 ## Welcome to GitHub Pages
 
 You can use the [editor on GitHub](https://github.com/zaq1013/zaq1013.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.

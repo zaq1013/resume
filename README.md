@@ -7,8 +7,7 @@
  ,選單中有home,about,contact等選項,透過#選擇ID的方法,可以直接跳到該欄位
  我先將其顏色改成透明,再用自己寫的css把其position改成fixed,如此一來就能讓它固定在畫面上方了
  
- 在左下角的三個logo中,我放入了我的twitter,github的個人網頁,在信箱的logo中,我放入了一個網址,
-  只要點開就能進入gmail寄信到我的信箱的畫面
+ 在左下角的三個logo中,我放入了我的twitter,github的個人網頁
  
 而在Home的部分,我加入了一個bootstrap的carousel功能,來展示我的4張照片,並用data-interval將幻燈片間隔調至2.5秒
  

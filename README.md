@@ -1,49 +1,18 @@
 ### Reference 
-  Template : HTML5UP 
+  Template sources: HTML5UP 
     https://html5up.net/strata
-    
- 在頁首的部分,我加入了一個bootstrap的carousel功能,來展示我的三張照片
+  參考範本:https://chiayi-lin.github.io/#about-section
+  
+ 在頁首的部分,我參考https://chiayi-lin.github.io/#about-section 加入了bootstrap的nav-bar
+ ,選單中有home,about,contact等選項,透過#選擇ID的方法,可以直接跳到該欄位
+ 我先將其顏色改成透明,再用自己寫的css把其position改成fixed,如此一來就能讓它固定在畫面上方了
  
+ 在左下角的三個logo中,我放入了我的twitter,github的個人網頁,在信箱的logo中,我放入了一個網址,
+  只要點開就能進入gmail寄信到我的信箱的畫面
+ 
+而在Home的部分,我加入了一個bootstrap的carousel功能,來展示我的4張照片,並用data-interval將幻燈片間隔調至2.5秒
+ 
+在課程內容展示(Courses)的部分,我同樣加入了一個bootstrap的carousel功能,並在每張圖加入carousel-caption備註
+  並把圖片用<a>加上可以點擊的link,點擊圖片後就能夠看到我放在雲端的那些課程作業成果
 
 
-
-## Welcome to GitHub Pages
-
-You can use the [editor on GitHub](https://github.com/zaq1013/zaq1013.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/zaq1013/zaq1013.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
-
-### Reference 
-  Template : HTML5UP https://html5up.net/strata

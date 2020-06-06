@@ -9,7 +9,7 @@
  
  在左下角的三個logo中,我放入了我的twitter,github的個人網頁
  
-而在Home的部分,我加入了一個bootstrap的carousel功能,來展示我的4張照片,並用data-interval將幻燈片間隔調至2.5秒
+而在Home的部分,我加入了一個bootstrap的carousel功能,來展示我的3張照片,並用data-interval將幻燈片間隔調至2.5秒
  
 在課程內容展示(Courses)的部分,我同樣加入了一個bootstrap的carousel功能,並在每張圖加入carousel-caption備註
   並把圖片用<a>加上可以點擊的link,點擊圖片後就能夠看到我放在雲端的那些課程作業成果

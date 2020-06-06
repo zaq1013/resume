@@ -1,0 +1,16 @@
+.fixed-top{
+    position: fixed;
+}
+.nav-link{
+    border: 1px white;
+
+}
+.coursetext{
+    font-size: 0.8em;
+    background-color: rgba(128, 128, 128, 0.712);
+    color: white
+}
+.courseh{
+    font-weight:bold;
+    color: black;
+}

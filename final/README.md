@@ -12,3 +12,13 @@
 炸彈就會爆炸,遊戲一樣會以失敗作結束
 
 ### 使用的技術以及過程思路
+首先要介紹的是棋盤格生成的思路及方法,我用jquery去讀取每個不同難度的html中格子數的id,
+先利用init()這個函式來做一些初始化,先設定row和col、丟入地雷(value='*'),並用隨機函數打亂地雷的位子
+再用迴圈來計算其周圍的炸彈數,分別判斷其左上,上,右上...到右下中含有多少value=="*"的格子
+再利用mapOk()這個函式來生成html element,此處我使用的是button,將上面生成的物件的屬性(value,class,onclick)
+透過setAttribute加到HTML Element中,至此棋盤便生成完畢
+
+再來就要提到遊戲判定的部分了,每當點擊一個button,將會執行game()這個函數,它會先讓該button顯示其value,並丟入
+switchMap()這個函數來判定點到的是否是地雷,若不是炸彈,將會把該button的class從unknow改成number(1,2...)或empty(0)
+以便後面的判斷。而判斷完是否踩到炸彈後,將會判定是否達成獲勝條件,用jquery的$("[class='unknow']")可以找到剩下未點開的所有數
+透過一個CheckBoard()的函數來判定是否所有剩下的unknow都是*炸彈 *

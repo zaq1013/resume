@@ -11,29 +11,38 @@
 </head>
 
 <body>
-    <nav></nav>
-    <nav>
-        <div class="mode" id="easy" style="background-color: rgb(163, 216, 40);"><a href="./index.html">homepage</a>
-        </div>
-        <div class="mode" style="background-color: rgb(163, 216, 40);"><a href="./index.html">Easy Mode</a></div>
-        <div class="mode" style="background-color: rgb(163, 216, 40);"><a href="./index.html">Normal Mode</a></div>
-        <div class="mode" style="background-color: rgb(163, 216, 40);"><a href="./index.html">Hard Mode</a></div>
-        <div class="mode" style="background-color: rgb(163, 216, 40);">
-            經過時間:
-            <label id="clock">0</label>
-        </div>
+
+
+    <nav id="index">
+        <div id="title">踩地雷(改版) Landmine</div>
     </nav>
-    <div id="gb">
-        <div class="empty_div">
-            <div id="mainmap" class="map" style="--colNum:6;">
-            </div>
+    <header class="bg py-5 mb-4 sc">
+        <div class="container">
+            <h1 class="aa">請選擇難度</h1>
         </div>
-    </div>
+    </header>
+    <nav id="select">
+
+        <div class="mode" id="easy"><a href="./html/easy.html">
+                <img src="./img/easy.png" alt="easy" class="mode">
+            </a>
+        </div>
+        <div class="mode" id="normal"><a href="./html/normal.html"><img src="./img/normal.png" alt="Normal"
+                    class="mode">
+            </a></div>
+        <div class="mode" id="hard"> <a href="./html/hard.html"><img src="./img/hard.png" alt="Hard" class="mode">
+            </a>
+        </div>
+
+    </nav>
+
+
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
         integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
     </script>
-    <script src="./js/final.js"></script>
+    <!-- <script src="./js/final.js"></script> -->
 </body>
 
 </html>

@@ -6,13 +6,14 @@ var boomi, boomj, boomnum;
 var map = document.getElementsByClassName("map");
 var clock = document.getElementById("clock");
 var showTime;
-mapsize = 6; //地圖尺寸
-boomnum = 2; //地雷數量
-clock.innerHTML = 0;
+mapsize = +$('#mapsize').text()
+boomnum = +$('#bombnum').text()
+clock.innerHTML = +$('#clock').text();
 
 //計時器
 function now() {
-    clock.innerHTML = parseInt(clock.innerHTML) + 1;
+    clock.innerHTML = parseInt(clock.innerHTML) - 1;
+    Time()
 }
 var showTime = setInterval(now, 1000);
 //change mapsize
@@ -21,7 +22,6 @@ function change(size) {
     mapsize = size;
     boomnum = size - 1;
     map[0].style.setProperty("--colNum", mapsize);
-    map[1].style.setProperty("--colNum", mapsize);
     clock.innerHTML = 0;
     init();
     mapOk();
@@ -29,24 +29,6 @@ function change(size) {
 }
 init();
 mapOk();
-//選擇easy模式
-$(() => {
-    $('#easy').on('click', () => {
-        change(6)
-    })
-})
-//選擇normal模式
-$(() => {
-    $('#normal').on('click', () => {
-        change(9)
-    })
-})
-//選擇hard模式
-$(() => {
-    $('#normal').on('click', () => {
-        change(12)
-    })
-})
 
 //製作地圖&放置地雷
 function init() {
@@ -115,12 +97,6 @@ function mapOk() {
         var btnGod = document.createElement("button");
         var btnMain = document.createElement("button");
 
-        // //上帝視角
-        // btnGod.setAttribute('value', boommap[row][col]);
-        // btnGod.setAttribute('class', switchMap(boommap[row][col]));
-        // btnGod.innerText = boommap[row][col];
-        // map[0].appendChild(btnGod);
-
         //遊戲地圖
         btnMain.setAttribute('value', boommap[row][col]);
         btnMain.setAttribute('class', "unknow");
@@ -133,6 +109,7 @@ function switchMap(ifmap) {
     if (ifmap == "*") return "boom";
     if (ifmap == 0) return "empty";
     return "number";
+
 }
 //遊戲
 var btnAll = map[0].getElementsByTagName("button");
@@ -140,13 +117,46 @@ var btnAll = map[0].getElementsByTagName("button");
 function game(me) {
     me.innerText = me.value;
     me.setAttribute('class', switchMap(me.value));
-
+    all = $(".map>button")
     //boom
     if (me.value == "*") {
-        alert("boom");
+        alert("踩到地雷爆炸了！！！");
+        ShowAll(all)
         for (let i = 0; i < btnAll.length; i++) {
             btnAll[i].setAttribute("disabled", false);
             clearInterval(showTime);
         }
+    }
+    un = $("[class='unknow']")
+    if (CheckBoard(un) == 1) {
+        alert("You WIN!!!")
+        clock.innerHTML = "X"
+        ShowAll(all)
+    } else un = []
+    Time()
+}
+
+function ShowAll(a) {
+    for (let i = 0; i < all.length; i++) {
+        a[i].innerText = a[i].value
+    }
+}
+//確認遊戲是否結束
+function CheckBoard(a) {
+    for (let i = 0; i < a.length; i++) {
+        if (a[i].className == "unknow" & a[i].value != "*") {
+            return 0
+            break
+        }
+
+    }
+    return 1;
+}
+//確認是否時間到
+function Time() {
+    time = +$('#clock').text()
+    if (time <= 0) {
+        alert("時間到!!炸彈爆炸了!!!")
+        clock.innerHTML = "X"
     }
 }

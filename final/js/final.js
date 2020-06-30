@@ -9,6 +9,9 @@ var showTime;
 mapsize = +$('#mapsize').text()
 boomnum = +$('#bombnum').text()
 clock.innerHTML = +$('#clock').text();
+document.oncontextmenu = function (e) {
+    return false;
+}
 
 //計時器
 function now() {
@@ -101,6 +104,7 @@ function mapOk() {
         btnMain.setAttribute('value', boommap[row][col]);
         btnMain.setAttribute('class', "unknow");
         btnMain.setAttribute('onclick', "game(this)");
+        btnMain.setAttribute('style', "background-color:#c6c3c6")
         map[0].appendChild(btnMain);
     }
 }
@@ -113,6 +117,18 @@ function switchMap(ifmap) {
 }
 //遊戲
 var btnAll = map[0].getElementsByTagName("button");
+
+
+
+$(".map>button").contextmenu(function (event) {
+    // 避免跳出系統預設右鍵menu
+    event.preventDefault();
+    if ($(this).css("background-color") == "rgb(198, 195, 198)") {
+        $(this).css("background-color", "#be3c47")
+    } else if ($(this).css("background-color") == "rgb(190, 60, 71)") {
+        $(this).css("background-color", "#c6c3c6")
+    }
+})
 
 function game(me) {
     me.innerText = me.value;
@@ -136,6 +152,8 @@ function game(me) {
     Time()
 }
 
+
+//顯示棋盤內所有button的value
 function ShowAll(a) {
     for (let i = 0; i < all.length; i++) {
         a[i].innerText = a[i].value

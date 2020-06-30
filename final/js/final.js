@@ -158,5 +158,7 @@ function Time() {
     if (time <= 0) {
         alert("時間到!!炸彈爆炸了!!!")
         clock.innerHTML = "X"
+        all = $(".map>button")
+        ShowAll(all)
     }
 }

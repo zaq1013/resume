@@ -121,8 +121,9 @@ var btnAll = map[0].getElementsByTagName("button");
 
 
 $(".map>button").contextmenu(function (event) {
-    // 避免跳出系統預設右鍵menu
+    // 取消系統預設右鍵功能
     event.preventDefault();
+    // 判斷目前背景顏色
     if ($(this).css("background-color") == "rgb(198, 195, 198)") {
         $(this).css("background-color", "#be3c47")
     } else if ($(this).css("background-color") == "rgb(190, 60, 71)") {

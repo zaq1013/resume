@@ -12,6 +12,7 @@ clock.innerHTML = +$('#clock').text();
 document.oncontextmenu = function (e) {
     return false;
 }
+// x = $("[style='background-color: rgb(216, 154, 40)']")
 
 //計時器
 function now() {
@@ -37,7 +38,6 @@ mapOk();
 function init() {
     //地圖初始化
     map[0].innerText = "";
-    // map[1].innerText = "";
     boommap.splice(0, boommap.length);
     randmap.splice(0, randmap.length);
 
@@ -105,6 +105,8 @@ function mapOk() {
         btnMain.setAttribute('class', "unknow");
         btnMain.setAttribute('onclick', "game(this)");
         btnMain.setAttribute('style', "background-color:#c6c3c6")
+        btnMain.setAttribute('position-x', row);
+        btnMain.setAttribute('position-y', col);
         map[0].appendChild(btnMain);
     }
 }
@@ -123,7 +125,6 @@ var btnAll = map[0].getElementsByTagName("button");
 $(".map>button").contextmenu(function (event) {
     // 取消系統預設右鍵功能
     event.preventDefault();
-    // 判斷目前背景顏色
     if ($(this).css("background-color") == "rgb(198, 195, 198)") {
         $(this).css("background-color", "#be3c47")
     } else if ($(this).css("background-color") == "rgb(190, 60, 71)") {
@@ -143,6 +144,7 @@ function game(me) {
             btnAll[i].setAttribute("disabled", false);
             clearInterval(showTime);
         }
+
     }
     un = $("[class='unknow']")
     if (CheckBoard(un) == 1) {
@@ -151,6 +153,9 @@ function game(me) {
         ShowAll(all)
     } else un = []
     Time()
+    if (me.value == "0") {
+        breakblock(me)
+    }
 }
 
 
@@ -179,5 +184,32 @@ function Time() {
         clock.innerHTML = "X"
         all = $(".map>button")
         ShowAll(all)
+    }
+}
+
+// 7/1新增:炸掉周圍的0
+function breakblock(me) {
+    x = $(me).attr("position-x")
+    y = $(me).attr("position-y")
+    all = $(".map>button")
+    for (let i = 0; i < mapsize ** 2; i++) {
+        nowx = $(all[i]).attr("position-x")
+        nowy = $(all[i]).attr("position-y")
+        //計算距離絕對值
+        xx = nowx - x
+        if (xx < 0) {
+            xx = -(xx)
+        }
+        yy = nowy - y
+        if (yy < 0) {
+            yy = -(yy)
+        }
+        dis = (xx ** 2) + (yy ** 2)
+        //判定是否為九宮格內的格子,如果是而且不是炸彈的話,就顯示他的值
+        if ((xx < 2) & (yy < 2) & (all[i].value != "*")) {
+            all[i].innerText = all[i].value
+            $(all[i]).addClass("know")
+
+        }
     }
 }
